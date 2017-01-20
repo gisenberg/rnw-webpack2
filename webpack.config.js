@@ -3,6 +3,10 @@ const path = require('path');
 module.exports = {
   devtool: 'inline-source-map',
   resolve: {
+    extensions: [
+      '.web.js',
+      '.js'
+    ],
     alias: {
       'react-native': 'react-native-web'
     }
