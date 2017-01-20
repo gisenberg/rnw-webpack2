@@ -4,9 +4,7 @@ This repository exists to demonstrate a difference in module resolution behavior
 
 > More substantial Web-specific implementation code should be written in files with the extension .web.js, which webpack will automatically resolve.
 
-It looks like this behavior has changed in `webpack@2.x.x`. The intent here is to understand whether or not this is now a documentation bug in `react-native-web` or if this is a regression in `webpack`.
-
-To reproduce, follow these steps:
+It looks like this behavior has changed in `webpack@2.x.x`. To reproduce, follow these steps:
 
 1. `git clone https://github.com/gisenberg/rnw-webpack2.git`
 2. `cd rnw-webpack2`
@@ -15,3 +13,5 @@ To reproduce, follow these steps:
 5. Navigate to http://localhost:8080/
 
 The code for the page imports `./dependency`, which resolves to `dependency.web.js` in `webpack@1` but `dependency.js` in `webpack@2`. In webpack 2, the page emits 'Hello from dependency.js' but should be emitting 'Hello from dependency.web.js' instead.
+
+The intent here is to understand whether or not this is now a documentation bug in `react-native-web` or if this is a regression in `webpack`.
